@@ -1,0 +1,3 @@
+games.heads.constants = {
+	const: ""
+};
