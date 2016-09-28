@@ -1,5 +1,3 @@
-CT.require();
-
 games.heads.ui.Mobile = CT.Class({
 	"CLASSNAME": "games.heads.ui.Mobile",
 	update: function(obj) {
