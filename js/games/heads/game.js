@@ -4,8 +4,7 @@ games.heads.game = new CT.Class({
 	"_heads": null,
 	"_initHead": function(h) {
 		this._data[h] = {
-			"stat": "active",
-			"const": games.heads.constants.const
+			"stat": "active"
 		};
 	},
 	"_build": function() {
