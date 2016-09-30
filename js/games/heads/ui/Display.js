@@ -2,11 +2,11 @@ games.heads.ui.Display = CT.Class({
 	"CLASSNAME": "games.heads.ui.Display",
 	_heads: {},
 	_addHead: function(name) {
-		this._heads[name] = CT.dom.node([
-				CT.dom.node(name, "DIV", "centered"),
+		this._heads[name] = CT.dom.div([
+				CT.dom.div(name, "centered"),
 				CT.dom.iframe("http://45.79.138.63:8082/game0.html",
-					"bot-iframe")
-			], "DIV", "head-wrapper");
+					"bot-iframe w1 h4-5")
+			], "head-wrapper inline-block w1-5 h500p");
 		this.headsNode.appendChild(this._heads[name]);
 		this._resizeHeads();
 	},
@@ -23,7 +23,6 @@ games.heads.ui.Display = CT.Class({
 	say: function(obj) {
 		this.log("say", obj);
 		//obj.name head issued message to say obj.message
-		debugger;
 		var iframe = this._heads[obj.user].children[1],
 			msg = obj.message.data.message;
 		CT.dom.getDoc(iframe).postMessage(msg, "*");
@@ -49,9 +48,11 @@ games.heads.ui.Display = CT.Class({
 					CT.dom.node("HEADS", "DIV", "centered"),
 					this.headsNode = CT.dom.node()
 				]));
+		this.opts.presence.forEach(this._addHead);
 	},
-	init: function(obj) {
-		this.log("init", obj);
+	init: function(opts) {
+		this.opts = opts;
+		this.log("init", opts);
 		this._build();
 	}
 }, mgc.core.UI);
