@@ -8,8 +8,10 @@ _pay.py
 logs
 blob
 img/mgc
-css/ct.css
-css/mgc.css
 html-production/CT
+bots/lobby.py
+bots/chatterbox.py
 js/CT
 js/mgc
+css/ct.css
+css/mgc.css
